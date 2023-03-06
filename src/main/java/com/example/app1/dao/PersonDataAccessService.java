@@ -3,12 +3,16 @@ package com.example.app1.dao;
 import com.example.app1.model.Person;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+//@Repository("mysql")
 
-@Repository("mysql")
 public class PersonDataAccessService implements PersonDao{
+
+
+    private static List<Person> DB = new ArrayList<>();
     @Override
     public int insertPerson(UUID Id, Person person) {
         return 0;
@@ -16,7 +20,8 @@ public class PersonDataAccessService implements PersonDao{
 
     @Override
     public List<Person> selectAllPeople() {
-        return List.of(new Person(UUID.randomUUID(), "FROM MYSQL DB"));
+        //return List.of(new Person(UUID.randomUUID(), "FROM MYSQL DB));"
+        return null;
     }
 
     @Override
